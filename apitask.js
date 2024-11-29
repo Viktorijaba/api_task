@@ -22,8 +22,10 @@ fetch("https://api.escuelajs.co/api/v1/users")
                 <p class="card-meta">
                     Updated on: <span class="card-timestamp">${new Date(data[i].updatedAt).toDateString()}</span>
                 </p>
+                <button class="delete-button">Delete</button>
             </div>
         </div>
       `;
         }
     })
+
