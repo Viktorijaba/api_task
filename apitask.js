@@ -5,7 +5,6 @@ fetch("https://api.escuelajs.co/api/v1/users")
     .then(res => res.json())
     .then(data => {
         for (let i = 0; i < data.length; i++) {
-
             users.push(data[i]);
 
             body.innerHTML += `
@@ -27,5 +26,13 @@ fetch("https://api.escuelajs.co/api/v1/users")
         </div>
       `;
         }
+
+        const deleteButtons = document.querySelectorAll(".delete-button");
+        deleteButtons.forEach(button => {
+            button.onclick = function (event) {
+                const card = event.target.closest(".card");
+                card.remove();
+            };
+        });
     })
 
